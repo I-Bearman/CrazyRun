@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TouchScript : MonoBehaviour
 {
-    float startDistance,signMove;
-    Vector2 startPos;
+    private float startDistance;
+    private float signMove;
+    private Vector2 startPos;
 
     void Update()
     {

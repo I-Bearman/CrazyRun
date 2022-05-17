@@ -4,6 +4,7 @@ public class FinishScript : MonoBehaviour
 {
     [SerializeField] private Collider heroCollider;
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject pauseButton;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,6 +12,7 @@ public class FinishScript : MonoBehaviour
         {
             Time.timeScale = 0;
             victoryPanel.SetActive(true);
+            pauseButton.SetActive(false);
         }
     }
 }

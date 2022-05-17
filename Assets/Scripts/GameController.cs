@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1;
+        pauseButton.SetActive(true);
+
         currTime = startTime;
         timeText.text = (Mathf.RoundToInt(currTime)).ToString();
     }
@@ -43,9 +46,14 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
             defeatPanel.SetActive(true);
+            pauseButton.SetActive(false);
         }
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
     public void ToMenu()
     {
         SceneManager.LoadScene(0);

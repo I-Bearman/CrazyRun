@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject defeatPanel;
     [SerializeField] private Text timeText;
     [SerializeField] private int startTime;
+    private float sceneStartTime;
     private float currTime;
 
     private void Awake()
@@ -16,13 +17,14 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         pauseButton.SetActive(true);
 
+        sceneStartTime = Time.time;
         currTime = startTime;
         timeText.text = (Mathf.RoundToInt(currTime)).ToString();
     }
 
     private void FixedUpdate()
     {
-        currTime = startTime - Time.time;
+        currTime = startTime - (Time.time - sceneStartTime);
         timeText.text = (Mathf.RoundToInt(currTime)).ToString();
         CheckDefeat();
     }

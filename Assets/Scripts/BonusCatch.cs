@@ -3,6 +3,7 @@ using UnityEngine;
 public class BonusCatch : MonoBehaviour
 {
     [SerializeField] private Collider heroCollider;
+    [SerializeField] private AudioSource coinSpending;
     public static int bonusCount;
 
     private void Awake()
@@ -15,6 +16,7 @@ public class BonusCatch : MonoBehaviour
         if (other == heroCollider)
         {
             bonusCount++;
+            coinSpending.Play();
             transform.gameObject.SetActive(false);
         }
     }

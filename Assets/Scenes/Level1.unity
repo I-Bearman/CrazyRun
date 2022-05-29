@@ -1111,7 +1111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   field: {fileID: 0}
-  ballSpeed: 3
+  ballSpeed: 2
   inputHandler: {fileID: 1601156731}
 --- !u!4 &2007312690
 Transform:
